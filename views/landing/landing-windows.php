@@ -22,7 +22,7 @@
 </window>
 
 
-<window id="window-new" data-flip-id="animate" class="increased">
+<window id="window-new" data-flip-id="animate" class="">
     <toolbar>
         <button onclick="toggleWindow()" class="action"><span class="material-symbols-rounded">close</span></button>
     </toolbar>

@@ -119,7 +119,7 @@
         <span class="bottom-gradient"></span>
     </div>
 
-    <div class="news_card">
+    <div class="news_card" onclick="toggleWindow('#window-new')" data-flip-id="animate">
         <div class="content_box invisible">
             <div class="simple_container">
                 <h1 class="ultra-large">New Research Findings</h1>
