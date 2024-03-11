@@ -304,10 +304,10 @@ bottombar selector.active .material-symbols-rounded{
 }
 
 /* TEXTS */
-h1, h2, h3, h4, p{margin:0; width:100%; color:rgba(var(--normalInverted), 0.85); font-weight: normal;}
+h1, h2, h3, h4, p{margin:0; width:100%; color:rgba(v    ar(--normalInverted), 0.85); font-weight: normal;}
 h1.large{font-size:26px; line-height: 32px;}
 h1.ultra-large{font-size:40px; line-height: 48px;}
-h1{font-size:22px; line-height: 26px; font-weight: 600;}
+h1{font-size:22px; line-height: 26px; font-weight: 600;}s
 h2{font-size:17px; line-height: 22px;}
 h3{font-size:13px; line-height: 16px;}
 h4{font-size:11px; line-height: 14px; font-weight: normal;}
