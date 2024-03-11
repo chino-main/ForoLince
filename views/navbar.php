@@ -7,10 +7,12 @@
         <span class="material-symbols-rounded">home</span>
         Inicio
     </selector>
-    <selector id="sel-events" onclick="toggleSection('#section-events')" class="ripple_effect">
-        <span class="material-symbols-rounded">event</span>
-        Eventos
+
+    <selector id="sel-news" onclick="toggleSection('#section-news');" class="ripple_effect">
+        <span class="material-symbols-rounded">newspaper</span>
+        Noticias
     </selector>
+
     <selector id="sel-test" onclick="toggleSection('#section-test');" class="ripple_effect">
         <span class="material-symbols-rounded">inbox</span>
         Prueba

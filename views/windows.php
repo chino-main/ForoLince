@@ -46,48 +46,48 @@
     </section>
 </window>
 
-<window id="window-create_event" class="increased slim h-auto" data-flip-id="animate">
+<window id="window-create_news" class="increased slim h-auto" data-flip-id="animate">
+
     <toolbar>
         <button onclick="toggleWindow()" class="action"><span class="material-symbols-rounded">close</span></button>
     </toolbar>
-    <section>
-        <h1>Añadir evento</h1>
+
+    <section >
+        <h1>Crear Noticia</h1>
+        
         <div class="simple_container">
             <span class="modern-input">
-                <label for="create-event_name">Nombre del evento</label>
-                <input id="create-event_name" type="text">
-            </span>
-            <span class="modern-input">
-                <textarea 
-                    id="create-event_description" 
-                    class="modern" 
-                    cols="30" rows="10"
-                    placeholder="Descripción del evento"
-                ></textarea>
-            </span>
-            <span class="modern-input">
-                <label for="create-event_date">Fecha del evento</label>
-                <input id="create-event_date" type="date">
-            </span>
-            <span class="modern-input">
-                <label for="create-event_time">Hora del evento</label>
-                <input id="create-event_time" type="time">
-            </span>
-            <span class="modern-input">
-                <label for="create-event_adress">Ubicación del evento</label>
-                <input id="create-event_adress" type="text" placeholder="Escribe la dirección">
-            </span>
-            <span class="modern-input">
-                <label for="create-event_image">Imagen del evento</label>
-                <input id="create-event_image" type="text" placeholder="Url de imagen">
+                <label for="create-news-title">Título Noticia</label>
+                <input type="text" placeholder="Agregar el Título" id="create-news-title">
             </span>
 
-            <button class="color-primary ripple_effect big-button">
-                <span class="material-symbols-rounded dynamic fill">add</span>
-                Añadir evento
-            </button>
-
-
+            <span class="modern-input">
+                <label for="create-news-description">Descripción Noticia</label>
+                <textarea id="create-news-description" cols="30" rows="10" placeholder="Agregar la Descripción"></textarea>
+            </span>
         </div>
+
+        <button onclick="" class="color-primary ripple_effect">Guardar</button>
+
     </section>
+
 </window>
+
+<style>
+    textarea{
+        width: 91%;
+        padding-top: 46px;
+        background: var(--surfaceMediumSolid);
+        box-shadow: none;
+        border-radius: 16px;
+        font-size:17px;
+        line-height: 22px;
+        border: none;
+        outline: none;
+        text-align: left;
+        font-family: 'Inter', sans-serif;
+        color: rgba(var(--normalInverted), 1);
+    }
+
+    textarea::placeholder{color: rgba(var(--normalInverted), 0.2);}
+</style>

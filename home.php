@@ -1,6 +1,6 @@
 <?php include_once 'views/header.php'; ?>
 
-<transparent >
+<transparent>
     <?php include_once "views/windows.php"; ?>
 </transparent>
 
