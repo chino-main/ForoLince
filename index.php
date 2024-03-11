@@ -73,19 +73,63 @@ cookiesRedirect($cookie_uid);
     </toolbar>
 
     <section class="active indexSection" id="section-start">
-      <div class="content_box small" >
-          <img src="resources/start_img.png" style="width:100%; height:100%; object-fit:cover; border-radius:16px">
+      <div class="vf_container visual_frame centered invisible">
+        <div class="centered_container">
+          <h1 class="ultra-large ">Foro Lince</h1>
+          <h1 class="thin b-margin">Inicia sesión como estudiante o como profesor</h1>
+          <img src="resources/login_img.png" style="width:100%; border-radius:24px; margin-bottom:16px">
+          
+          <div class="content_box invisible" style="margin-bottom:64px">
+            <button onclick="toggleWindow('#signup')" class="big-button color-primaryNeutral ripple_effect" data-flip-id="animate">
+              Registrarse
+            </button>
+            <button onclick="toggleWindow('#login')" class="big-button color-outline ripple_effect" data-flip-id="animate">
+              <span class="material-symbols-rounded dynamic fill ">login</span>
+              Iniciar sesión
+            </button>
+          </div>
+
+        </div>
       </div>
-      <div class="content_box small" style="padding:48px;min-width:60%; justify-content: center">
+
+      <!-- <div class="content_box small" style="justify-content: center; padding:32px;">
+        <h1 style="font-size:6vh; line-height:6vh;">Para estudiantes</h1>
+        <h2 style="margin-bottom:24px;">Pandel de administración para estudiantes</h2>
+        <button class="color-primary" onclick="toggleWindow('#login')" data-flip-id="animate">Iniciar sesión</button>
+          <button class="color-outline" onclick="toggleWindow('#signup')" data-flip-id="animate">Crear cuenta</button>
+      </div>
+      <div class="content_box small" style="justify-content: center; padding:32px;">
           <h1 style="font-size:6vh; line-height:6vh;">Foro Lince</h1>
           <h1 style="margin-bottom:24px;">Panel de administración</h1>
           <button class="color-primary" onclick="toggleWindow('#login')" data-flip-id="animate">Iniciar sesión</button>
           <button class="color-outline" onclick="toggleWindow('#signup')" data-flip-id="animate">Crear cuenta</button>
-      </div>
+      </div> -->
     </section>
 
   </holder>
 </main>
+
+<style>
+  .visual_frame.centered{
+    padding:24px;
+    justify-content:center;
+    align-items:center;  
+  }
+  .centered_container{
+    width:100%;
+    max-width:800px;
+    height:100%;
+  }
+
+  @media only screen and (min-width: 680px){
+    .big-button{max-width:300px}
+    .centered_container{
+      display:flex;
+      flex-wrap:wrap;
+      align-content: center;
+    }
+  }
+</style>
 
 
 <?php include_once 'views/footer.php'; ?>

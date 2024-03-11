@@ -7,6 +7,10 @@
         <span class="material-symbols-rounded">home</span>
         Inicio
     </selector>
+    <selector id="sel-events" onclick="toggleSection('#section-events')" class="ripple_effect">
+        <span class="material-symbols-rounded">event</span>
+        Eventos
+    </selector>
     <selector id="sel-test" onclick="toggleSection('#section-test');" class="ripple_effect">
         <span class="material-symbols-rounded">inbox</span>
         Prueba
@@ -30,6 +34,10 @@
 </sidebar>
 
 <bottombar>
+    <selector id="btmSel-events" onclick="toggleSection('#section-events')">
+        <span class="material-symbols-rounded">event</span>
+        Eventos
+    </selector>
     <selector id="btmSel-start" onclick="toggleSection('#section-start')" class="active">
         <span class="material-symbols-rounded">home</span>
         Inicio

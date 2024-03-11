@@ -70,7 +70,7 @@ body{
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
     background: var(--normal);
-    background: black;
+    /* background: black; */
 }
 
 main{
@@ -80,7 +80,7 @@ main{
     /* max-width:calc(100% - 40px);
     max-height: calc(100% - 40px); */
     /* background: var(--surfaceMedium); */
-    border-radius:16px;
+    /* border-radius:16px; */
     overflow: hidden;
     transition: all .5s cubic-bezier(0.2, 0, 0, 1);
 }
@@ -307,12 +307,14 @@ bottombar selector.active .material-symbols-rounded{
 h1, h2, h3, h4, p{margin:0; width:100%; color:rgba(var(--normalInverted), 0.85); font-weight: normal;}
 h1.large{font-size:26px; line-height: 32px;}
 h1.ultra-large{font-size:40px; line-height: 48px;}
+h1.super-ultra-large{font-size:64px; line-height: 72px;}
 h1{font-size:22px; line-height: 26px; font-weight: 600;}
 h2{font-size:17px; line-height: 22px;}
 h3{font-size:13px; line-height: 16px;}
 h4{font-size:11px; line-height: 14px; font-weight: normal;}
 p{font-size: 13px; line-height: 16px; font-weight: normal; margin:8px 0;}
-.emphasized{ font-weight: 600; }
+.emphasized{ font-weight: 900; }
+.thin{font-weight: 400;}
 .info{
     margin:0;
     color: rgba(var(--normalInverted), 0.5);
@@ -569,7 +571,7 @@ button.color-normal ripple, button.color-error ripple{background-color: rgba(var
     color: rgba(var(--normalInverted), 0.5);
     margin-bottom:6px;
 }
-input, select{
+input, select, textarea{
     box-sizing: border-box;
     display: inline-block;
     -webkit-appearance: textfield;

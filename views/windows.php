@@ -45,3 +45,49 @@
         <h1>Ventana grande</h1>
     </section>
 </window>
+
+<window id="window-create_event" class="increased slim h-auto" data-flip-id="animate">
+    <toolbar>
+        <button onclick="toggleWindow()" class="action"><span class="material-symbols-rounded">close</span></button>
+    </toolbar>
+    <section>
+        <h1>Añadir evento</h1>
+        <div class="simple_container">
+            <span class="modern-input">
+                <label for="create-event_name">Nombre del evento</label>
+                <input id="create-event_name" type="text">
+            </span>
+            <span class="modern-input">
+                <textarea 
+                    id="create-event_description" 
+                    class="modern" 
+                    cols="30" rows="10"
+                    placeholder="Descripción del evento"
+                ></textarea>
+            </span>
+            <span class="modern-input">
+                <label for="create-event_date">Fecha del evento</label>
+                <input id="create-event_date" type="date">
+            </span>
+            <span class="modern-input">
+                <label for="create-event_time">Hora del evento</label>
+                <input id="create-event_time" type="time">
+            </span>
+            <span class="modern-input">
+                <label for="create-event_adress">Ubicación del evento</label>
+                <input id="create-event_adress" type="text" placeholder="Escribe la dirección">
+            </span>
+            <span class="modern-input">
+                <label for="create-event_image">Imagen del evento</label>
+                <input id="create-event_image" type="text" placeholder="Url de imagen">
+            </span>
+
+            <button class="color-primary ripple_effect big-button">
+                <span class="material-symbols-rounded dynamic fill">add</span>
+                Añadir evento
+            </button>
+
+
+        </div>
+    </section>
+</window>

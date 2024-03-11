@@ -278,6 +278,7 @@
     }
     button.landing-button:hover{
         box-shadow: 0px 0px 64px -10px var(--primary);
+        transform: translateY(-3px);
     }
 
     div.content_box.pretty_content{
