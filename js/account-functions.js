@@ -41,6 +41,8 @@ async function logIn(){
     console.error('Error al iniciar sesión:', response.statusText);
   }
 }
+
+//Funcion Registrarse
 async function signUp(){
   if(!checkEmpty('#signup', 'input')){return false;}
 
