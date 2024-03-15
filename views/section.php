@@ -18,7 +18,7 @@
                 class="color-primary ripple_effect"
                 onclick="toggleWindow('#window-create_event')"
                 data-flip-id="animate"
-                >
+            >
                 + Añadir evento
             </button>
         </div>

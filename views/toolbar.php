@@ -1,5 +1,10 @@
 <toolbar>
-    <div class="toolbar_divisor"></div>
+    <div class="toolbar_divisor">
+        <button class="toolbar-button ripple_effect" onclick="window.location='landing'">
+            <span class="material-symbols-rounded">other_houses</span>
+        </button>
+
+    </div>
     <div class="toolbar_divisor">
         <button class="toolbar-button ripple_effect" data-flip-id="animate" onclick="toggleWindow('#window-account')">
             <span class="material-symbols-rounded">account_circle</span>

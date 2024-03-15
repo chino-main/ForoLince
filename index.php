@@ -68,13 +68,18 @@ cookiesRedirect($cookie_uid);
 
 <main>
   <holder>
-    <toolbar>
+    <!-- <toolbar>
       <button data-flip-id="animate" onclick="toggleWindow('#signup')" class="toolbar-button ripple_effect">Crear cuenta</button>
-    </toolbar>
+    </toolbar> -->
 
-    <section class="active indexSection" id="section-start">
+    <section class="active indexSection" id="section-start" style="align-items: center">
       <div class="vf_container visual_frame centered invisible">
         <div class="centered_container">
+
+          <a href="landing" class="ripple_effect b-margin">
+            <span class="material-symbols-rounded dynamic fill r-margin">arrow_back</span>
+            Inicio
+          </a>
           <h1 class="ultra-large ">Foro Lince</h1>
           <h1 class="thin b-margin">Inicia sesión como estudiante o como profesor</h1>
           <img src="resources/login_img.png" style="width:100%; border-radius:24px; margin-bottom:16px">
@@ -110,6 +115,26 @@ cookiesRedirect($cookie_uid);
 </main>
 
 <style>
+  a{
+    display:flex;
+    align-items: center;
+
+    color:rgba(var(--normalInverted), 0.6);
+    text-decoration:none;
+    border-radius:12px;
+    width:auto;
+    height:40px;
+
+    transition:background 125ms, padding 125ms ease-in-out;
+  }
+  a:hover{
+    padding:0 16px;
+    background:rgba(var(--normalInverted), 0.1)
+  }
+  a ripple{
+    background:var(--secondary)
+  }
+
   .visual_frame.centered{
     padding:24px;
     justify-content:center;

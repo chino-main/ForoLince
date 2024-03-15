@@ -41,6 +41,15 @@
         </div>
     </div>
 
+    <div class="content_box centered outline" style="padding: 48px 24px">
+        <span class="material-symbols-rounded pretty fill">person_add</span>
+        <h2 class="b-margin">Accede o crea una cuenta como estudiante o profesor</h2>
+        <button class="flex-button color-outline ripple_effect" onclick="window.location='index'">
+            <span class="material-symbols-rounded dynamic fill r-margin">login</span>
+            Iniciar sesión
+        </button>
+    </div>
+
 
 </section>
 
@@ -50,9 +59,9 @@
     </div>    
 
     <div class="card ripple_effect" onclick="toggleWindow('#window-events')" data-flip-id="animate">
-        <!-- <img src="resources/pretty_img_2.png" alt="" class="img-card"> -->
+        <img src="https://th.bing.com/th/id/OIG3.vQNYaZ5brfH1.6xwJdOm?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="" class="img-card">
         <div class="simple_container">
-            <h1>Evento académico</h1>
+            <h1 class="large">Evento académico</h1>
             <h2>14 de Febrero 2024</h2>
         </div>
         <div class="simple_container">
@@ -60,6 +69,8 @@
             
         </div>
     </div>
+
+    <event-item onclick="toggleWindow('#window-events')" data-flip-id="animate"></event-item>
     
     
 </section>
