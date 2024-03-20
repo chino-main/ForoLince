@@ -16,12 +16,16 @@ template.innerHTML = `
         flex-wrap:wrap;
 
         background:var(--surfaceMedium);
-        border-radius:32px;
+        border-radius:28px;
         cursor:pointer;
+        transition: transform .3s cubic-bezier(0,0,0.5,1);
     }
     .card:hover{
-        filter:brightness(0.95);
-        box-shadow: 0px 0px 0px 1px rgba(var(--normalInverted), 0.1);
+        transform: scale(1.0161290323);
+
+
+        // filter:brightness(0.95);
+        // box-shadow: 0px 0px 0px 1px rgba(var(--normalInverted), 0.1);
     }
 
     .content_divisor{
@@ -34,7 +38,6 @@ template.innerHTML = `
 
 
         box-sizing:border-box;
-        padding:8px;
     }
     .content_divisor:last-child{
         padding:24px;
@@ -49,6 +52,7 @@ template.innerHTML = `
         height:100%;
         object-fit: cover;
         border-radius:24px;
+        aspect-ratio: 16/10;
     
     }
 
@@ -66,6 +70,13 @@ template.innerHTML = `
         color:rgba(var(--normalInverted), 0.8);
     
     }
+    .simple_container{
+        display:flex;
+        flex-direction:column;
+        margin-bottom:8px;
+        gap:0px;
+    }
+
 
     button{
         background:var(--primary);
@@ -96,47 +107,35 @@ template.innerHTML = `
 
 <div class="card">
     <div class="content_divisor">
-        <img src="https://www.csuohio.edu/sites/default/files/51006432177_8688c7497b_c.jpg" alt="Lights" style="width:100%">
+        <img src="resources/pretty_img_2.png" alt="Lights" style="width:100%">
     </div>
     <div class="content_divisor">
-        <event-title>Música por la educación</event-title>
-        <event-date>29 de Feb, 2024</event-date>
+        <div class="simple_container">
+            <event-title>Música por la educación</event-title>
+            <event-date>29 de Feb, 2024</event-date>
+        </div>
+        
         <event-description>
-            En este concierto benéfico, se recaudarán fondos para apoyar la educación de niños en situación de pobreza. Se presentarán diferentes artistas locales y nacionales.
+        es un evento universitario que destaca el poder de la música en la enseñanza y el aprendizaje. Explora cómo la música mejora la retención de conceptos y promueve el desarrollo emocional y social de los estudiantes. Incluye talleres, paneles y presentaciones para capacitar a educadores en el uso efectivo de la música en el aula
         </event-description>
+        
     </div>
 </div>
 `;
 
 
-class BalanceItem extends HTMLElement {
+class eventItem extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({mode: 'open'});
     shadow.append(template.content.cloneNode(true));
-    // this.appendChild(template.content.cloneNode(true));
-    
-    // component elements that recieve values
-    // var incomeElement = this.querySelector('[income-formated]');
-    // var outcomeElement = this.querySelector('[outcome-formated]');
-    // var balanceElement = this.querySelector('[balance-formated]');
-    // var incomeBar = this.querySelector('[income-bar]');
-    // var outcomeBar = this.querySelector('[outcome-bar]');
-    // var balanceBar = this.querySelector('[balance-bar]');
-    // var MonthTitle = this.querySelector('[data-month]');
+  }
 
-    // values from the component attributes
-    // var dataIncome = this.getAttribute('data-income');
-    // var dataOutcome = this.getAttribute('data-outcome');
-
-    // asignation of the values to the elements
-    // incomeElement.innerText = formatMoney(dataIncome) ;
-    // outcomeElement.innerText = formatMoney(dataOutcome) ;
-    // balanceElement.innerText = formatMoney(Number(dataIncome) + Number(dataOutcome));
-    // setProgressBarHeight(incomeBar, outcomeBar, dataIncome, dataOutcome);
-    // setMonthTitle(MonthTitle, parseInt(this.getAttribute('data-month')));
-    // setBalanceBar(balanceBar, dataIncome, dataOutcome);
+  connectedCallback() {
+    if(this.hasAttribute('data-img')) {
+      this.shadowRoot.querySelector('img').setAttribute("src", this.getAttribute('data-img'));
+    }
   }
 }
 
-customElements.define('event-item', BalanceItem);
+customElements.define('event-item', eventItem);

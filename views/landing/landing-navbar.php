@@ -47,9 +47,9 @@
             max-width:100%;
             box-sizing: border-box;
             
-            height:120px;
+            height:80px;
             /* border-radius:16px; */
-            padding:48px;
+            padding:24px 88px;
 
             background: var(--normal);
             /* background: rgba(var(--surfaceLightClear), 0.24); */
@@ -77,7 +77,7 @@
 
             user-select:none;
             cursor:pointer;
-            transition: background 125ms;
+            transition: background 125ms, color 125ms, box-shadow 125ms;
             
             /* background: var(--primary);
             color: var(--onPrimary); */

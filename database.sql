@@ -1,5 +1,5 @@
-CREATE DATABASE foro-lince;
-USE foro-lince;
+CREATE DATABASE "foro-lince";
+USE "foro-lince";
 
 CREATE TABLE users (
     id BIGINT(20) PRIMARY KEY AUTO_INCREMENT,

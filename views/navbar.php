@@ -8,12 +8,12 @@
         Inicio
     </selector>
 
-    <selector id="sel-news" onclick="toggleSection('#section-news');" class="ripple_effect">
+    <selector id="sel-test" onclick="toggleSection('#section-test');" class="ripple_effect">
         <span class="material-symbols-rounded">newspaper</span>
         Noticias
     </selector>
 
-    <selector id="sel-test" onclick="toggleSection('#section-test');" class="ripple_effect">
+    <selector id="sel-events" onclick="toggleSection('#section-events');" class="ripple_effect">
         <span class="material-symbols-rounded">inbox</span>
         Prueba
     </selector>
@@ -21,8 +21,12 @@
     <selector class="sidebar-title">
         Opciones
     </selector>
+    <selector onclick="window.location='landing'" class="ripple_effect">
+        <span class="material-symbols-rounded" >arrow_back</span>
+        Volver a inicio
+    </selector>
     <selector onclick="toggleTheme()" class="ripple_effect">
-        <span class="material-symbols-rounded"id="toggle-theme_icon">light_mode</span>
+        <span class="material-symbols-rounded" id="toggle-theme_icon">light_mode</span>
         Cambiar tema
     </selector>
     <selector onclick="toggleWindow('#window-account')" class="ripple_effect" data-flip-id="animate">

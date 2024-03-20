@@ -184,7 +184,6 @@ function toggleOvermessage(overId){
 
 }
 function animate(element, windowNew, position){
-  console.log(window.innerWidth);
   let easeType = CustomEase.create("custom", "M0,0 C0.308,0.19 0.107,0.633 0.288,0.866 0.382,0.987 0.656,1 1,1 ");
   if(position === "absolute" && window.innerWidth >= 681){
     easeType = CustomEase.create("custom", "M0,0 C0.249,-0.124 -0.003,0.896 0.325,1.044 0.653,1.191 0.585,0.935 1,1 ");

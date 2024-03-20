@@ -15,8 +15,6 @@
         <button onclick="toggleWindow()" class="action"><span class="material-symbols-rounded">close</span></button>
     </toolbar>
     <section>
-        <h1>Evento</h1>
-        <p>Para inscribirte en el evento, por favor llena el siguiente formulario.</p>
         
     </section>
 </window>

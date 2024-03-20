@@ -1,20 +1,20 @@
 <section id="section-start" class="active">
 
-    <div class="content_box invisible add_gap pretty_content centered">
-        <h1 class="ultra-large" style="font-weight:900">Foro Lince</h1>
-        <div class="simple_container">
-            <h2 style="max-width:600px; text-wrap:balance">
-                Descubre la vanguardia académica en Universidad Lince. 
-                Explora noticias y eventos que impulsan el conocimiento y la excelencia. <br>Conéctate con nuestra comunidad educativa líder. Bienvenido al futuro de tu formación.
-            </h2>
+    <div class="content_box invisible titles-box">
+        <div class="content_divisor">
+            <h1 class="super-large emphasized-light">Foro Lince</h1>
         </div>
+        <div class="content_divisor vertical_center">
+            <h2 class="large" style="width:auto;">Descubre la vaguardia académica<br>en Universidad Lince</h2>
+        </div>
+
         
-        <button onclick="toggleSection('#section-events')" class="color-primaryNeutral ripple_effect landing-button">Proximos eventos</button>
-        <!-- <button onclick="toggleSection('#section-news')" class="color-outline ripple_effect landing-button">Ver noticias</button> -->
     </div>
 
-    <div class="content_box invisible img_holder">
-        <img src="resources/landing_img.png">
+
+
+    <div class="content_box invisible img_holder" style="border-radius:40px; overflow:hidden; max-height:800px">
+        <img src="https://th.bing.com/th/id/OIG4.K10CT_jBPYAY8fAa5dkx?pid=ImgGn">
     </div>
 
     <div class="vf_container visual_frame invisible" id="cards_holder" style="height:auto; margin:64px 0">
@@ -53,12 +53,18 @@
 
 </section>
 
-<section id="section-events">
-    <div class="title-img img-1">
+<section id="section-events" style="position:relative;">
+    <!-- <div class="title-img img-1">
         <h1 class="ultra-large">Eventos</h1>
-    </div>    
+    </div>     -->
 
-    <div class="card ripple_effect" onclick="toggleWindow('#window-events')" data-flip-id="animate">
+    <div class="content_box invisible titles-box">
+        <div class="content_divisor">
+            <h1 class="super-large emphasized-light">Eventos</h1>
+        </div>        
+    </div>
+
+    <!-- <div class="card ripple_effect" onclick="toggleWindow('#window-events')" data-flip-id="animate">
         <img src="https://th.bing.com/th/id/OIG3.vQNYaZ5brfH1.6xwJdOm?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="" class="img-card">
         <div class="simple_container">
             <h1 class="large">Evento académico</h1>
@@ -68,9 +74,40 @@
             <p class="info">Créditos: 10 horas</p>
             
         </div>
-    </div>
+    </div> -->
 
-    <event-item onclick="toggleWindow('#window-events')" data-flip-id="animate"></event-item>
+    <div class="content_box invisible pretty-content" >
+        <event-item 
+            data-img="https://helios-i.mashable.com/imagery/articles/01tKXBvpCMarePLfBPMImJd/images-3.fill.size_2000x1500.v1611691541.jpg"
+            data-title="Música para la educación"
+            data-description="Concierto benéfico para recaudar fondos para la educación en comunidades rurales."
+            onclick="toggleWindow('#window-events')" 
+            data-flip-id="animate"
+        ></event-item>
+        <event-item 
+            data-img="https://i.inews.co.uk/content/uploads/2017/09/IMG_5081.jpg"
+            onclick="toggleWindow('#window-events')"
+            data-flip-id="animate"
+        ></event-item>
+        <event-item 
+            data-img="https://cdn.vox-cdn.com/thumbor/gmOaM2NN6iP9FOpZOAsUqOzkUao=/0x0:5000x2325/1400x1050/filters:focal(2500x1163:2501x1164)/cdn1.vox-cdn.com/uploads/chorus_asset/file/8025671/apple_park_photo_2_theater.jpg"
+            onclick="toggleWindow('#window-events')" 
+            data-flip-id="animate">
+        </event-item>
+
+        <card-item>
+
+        </card-item>
+ 
+
+        <!-- <button class="big-button color-normalNeutral ripple_effect">
+            Ver más eventos
+            <span class="material-symbols-rounded fill">expand_more</span>
+        </button> -->
+    </div>
+    
+
+
     
     
 </section>
@@ -183,7 +220,15 @@
     /* .card{
         max-width: 33%;
     } */
+    /* Styles for main structure */
 
+    div.titles-box{margin:64px 0; margin-top:24px;}
+    .content_divisor{display:flex; flex-grow:1;justify-content: flex-start;}
+    .content_divisor:last-of-type{justify-content: flex-end;}
+    @media only screen and (max-width: 680px){
+        div.titles-box{margin:32px 0; margin-top:16px;}
+        .content_divisor:last-of-type{justify-content: flex-start;}
+    }
     
     p.text{
         font-size:17px;
@@ -296,7 +341,7 @@
         padding:64px;
     }
 
-    #holder-landing section{padding:120px 48px;}
+    #holder-landing section{padding:120px 88px;}
     
     div.content_box.img_holder{
     }
