@@ -31,5 +31,5 @@ CREATE TABLE events (
   event_description TEXT NOT NULL,
   event_date_time DATETIME NOT NULL,
   event_location VARCHAR(255) NOT NULL,
-  event_image VARCHAR(255) NULL
+  event_image VARCHAR(500) NULL
 );

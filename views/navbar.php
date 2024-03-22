@@ -14,8 +14,8 @@
     </selector>
 
     <selector id="sel-events" onclick="toggleSection('#section-events');" class="ripple_effect">
-        <span class="material-symbols-rounded">inbox</span>
-        Prueba
+        <span class="material-symbols-rounded">event</span>
+        Eventos
     </selector>
     
     <selector class="sidebar-title">

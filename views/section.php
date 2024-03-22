@@ -23,4 +23,8 @@
             </button>
         </div>
     </toolbar>
+
+    <div class="vf_container visual_frame invisible full-centered">
+        <h1 class="emphasized-light" style="color:rgba(var(--normalInverted),0.4)">Aún no has creado ningún evento</h1>
+    </div>
 </section>

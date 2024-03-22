@@ -73,6 +73,55 @@
 
 </window>
 
+<window id="window-create_event" class="increased mini h-auto" data-flip-id="animate">
+    <toolbar>
+        <button onclick="toggleWindow()" class="action"><span class="material-symbols-rounded">close</span></button>
+    </toolbar>
+    <section>
+        
+    <h1 class="ultra-large">Crea un evento</h1>
+
+        <div class="content_box small invisible">
+            <div class="simple_container">
+                <span class="modern-input">
+                    <label for="create-event_name">Nombre del evento</label>
+                    <input type="text" id="create-event_name">
+                </span>
+                <span class="modern-input">
+                    <textarea id="create-event_description" cols="30" rows="10" class="modern" placeholder="Descripción"></textarea>
+                </span>
+            </div>
+
+        </div>
+        <div class="content_box small invisible">
+            <div class="simple_container">
+            
+            <span class="modern-input">
+                <label for="create-event_date">Fecha del evento</label>
+                <input type="date" id="create-event_date">
+            </span>
+            <span class="modern-input">
+                <label for="create-event_address">Dirección del evento</label>
+                <input type="text" id="create-event_address">
+            </span>
+            <span class="modern-input">
+                <label for="create-event_image">Imagen del evento</label>
+                <input type="text" id="create-event_image">
+            </span>
+
+            <button onclick="createEvent()" class="ripple_effect color-primary" >
+                <span class="material-symbols-rounded dynamic fill">add</span>
+                Crear evento
+            </button>
+            </div>
+        </div>
+
+
+        
+    </section>
+    
+</window>
+
 <style>
     textarea{
         width: 91%;

@@ -45,7 +45,7 @@ function toggleSection(sectionId){
   }
     
 }
-function toggleWindow(windowId, position){
+function toggleWindow(windowId, position, scale){
   if (windowId == ''){windowId = null}
 
   // Close any other open window
@@ -95,9 +95,8 @@ function toggleWindow(windowId, position){
 
   // specific functions per window
   switch (windowId) {
-    case "#window-apptEdit": 
-      getApptData(getStorage('currentAppt')); 
-      getData("appt_status", "#edit-appt_status", getStorage('currentAppt'));
+    case "#window-create_movement": 
+      setInputDate();
     break;
     case "#window-account": 
       getUserData()
@@ -145,12 +144,9 @@ function toggleWindow(windowId, position){
       var windowWidth = windowNew.offsetWidth;
 
     });
-
-    
-
-    
   }
-  animate(element, windowNew, position);
+  if(scale === undefined){scale = 0}else{scale = 1}
+  animate(element, windowNew, position, scale);
 }
 function toggleOvermessage(overId){
   if (overId == ''){overId = null}
@@ -183,19 +179,29 @@ function toggleOvermessage(overId){
   overmessage.classList.add("active");
 
 }
-function animate(element, windowNew, position){
+function animate(element, windowNew, position, scale){
   let easeType = CustomEase.create("custom", "M0,0 C0.308,0.19 0.107,0.633 0.288,0.866 0.382,0.987 0.656,1 1,1 ");
   if(position === "absolute" && window.innerWidth >= 681){
-    easeType = CustomEase.create("custom", "M0,0 C0.249,-0.124 -0.003,0.896 0.325,1.044 0.653,1.191 0.585,0.935 1,1 ");
+    // easeType = CustomEase.create("custom", "M0,0 C0.249,-0.124 -0.003,0.896 0.325,1.044 0.653,1.191 0.585,0.935 1,1 ");
+    // easeType = CustomEase.create("custom", "M0,0 C0.249,-0.124 0.026,0.939 0.335,1.013 0.685,1.097 0.585,0.935 1,1 ");
+    easeType = CustomEase.create("custom", "M0,0 C0.249,-0.124 0.04,0.951 0.335,1 0.684,1.057 0.614,0.964 1,1");
+    // easeType = CustomEase.create("custom", "M0,0 C0.249,-0.124 0.045,0.925 0.335,1 0.625,1.074 0.532,0.987 1,1");
+  }
+
+  if (scale === 0 || window.innerWidth >= 681) {
+    var scaleValue = true;
+  }else{
+    var scaleValue = false;
   }
 
 
+  
   let state = Flip.getState(element);
   windowNew.classList.toggle('active');
   Flip.from(state, {
     targets: windowNew,
     duration: 0.5,
-    scale: true,
+    scale: scaleValue,
     ease: easeType,
     // ease: CustomEase.create("custom", "M0,0 C0.308,0.19 0.107,0.633 0.288,0.866 0.382,0.987 0.656,1 1,1 "),
     // ease: CustomEase.create("easeName", ".47,.29,0,1"),

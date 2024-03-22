@@ -64,18 +64,6 @@
         </div>        
     </div>
 
-    <!-- <div class="card ripple_effect" onclick="toggleWindow('#window-events')" data-flip-id="animate">
-        <img src="https://th.bing.com/th/id/OIG3.vQNYaZ5brfH1.6xwJdOm?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="" class="img-card">
-        <div class="simple_container">
-            <h1 class="large">Evento académico</h1>
-            <h2>14 de Febrero 2024</h2>
-        </div>
-        <div class="simple_container">
-            <p class="info">Créditos: 10 horas</p>
-            
-        </div>
-    </div> -->
-
     <div class="content_box invisible pretty-content" >
         <event-item 
             data-img="https://helios-i.mashable.com/imagery/articles/01tKXBvpCMarePLfBPMImJd/images-3.fill.size_2000x1500.v1611691541.jpg"
