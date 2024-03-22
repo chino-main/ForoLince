@@ -64,28 +64,23 @@
         </div>        
     </div>
 
-    <div class="content_box invisible pretty-content" >
-        <event-item 
+    <div class="content_box invisible pretty-content"  id="response-events_holder">
+
+        <!-- <div class="response_holder" id="response-events_holder" style="overflow:visible;"></div> -->
+
+        <!-- <event-item 
             data-img="https://helios-i.mashable.com/imagery/articles/01tKXBvpCMarePLfBPMImJd/images-3.fill.size_2000x1500.v1611691541.jpg"
             data-title="Música para la educación"
             data-description="Concierto benéfico para recaudar fondos para la educación en comunidades rurales."
+            data-date = "14 de Febrero, 2024"
             onclick="toggleWindow('#window-events')" 
             data-flip-id="animate"
-        ></event-item>
-        <event-item 
-            data-img="https://i.inews.co.uk/content/uploads/2017/09/IMG_5081.jpg"
-            onclick="toggleWindow('#window-events')"
-            data-flip-id="animate"
-        ></event-item>
-        <event-item 
-            data-img="https://cdn.vox-cdn.com/thumbor/gmOaM2NN6iP9FOpZOAsUqOzkUao=/0x0:5000x2325/1400x1050/filters:focal(2500x1163:2501x1164)/cdn1.vox-cdn.com/uploads/chorus_asset/file/8025671/apple_park_photo_2_theater.jpg"
-            onclick="toggleWindow('#window-events')" 
-            data-flip-id="animate">
-        </event-item>
-
+        ></event-item> -->
+        
+<!-- 
         <card-item>
 
-        </card-item>
+        </card-item> -->
  
 
         <!-- <button class="big-button color-normalNeutral ripple_effect">

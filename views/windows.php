@@ -73,11 +73,11 @@
 
 </window>
 
-<window id="window-create_event" class="increased mini h-auto" data-flip-id="animate">
+<window id="window-create_event" class="increased mini h-auto" data-flip-id="animate" >
     <toolbar>
         <button onclick="toggleWindow()" class="action"><span class="material-symbols-rounded">close</span></button>
     </toolbar>
-    <section>
+    <section style="gap:12px">
         
     <h1 class="ultra-large">Crea un evento</h1>
 
@@ -109,7 +109,7 @@
                 <input type="text" id="create-event_image">
             </span>
 
-            <button onclick="createEvent()" class="ripple_effect color-primary" >
+            <button onclick="createNewEvent()" class="big-button ripple_effect color-primary" >
                 <span class="material-symbols-rounded dynamic fill">add</span>
                 Crear evento
             </button>

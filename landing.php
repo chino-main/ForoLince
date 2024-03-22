@@ -17,7 +17,11 @@
         ?>
     </holder>
 </main>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        getEvents();
+    });
+</script>
 
 <?php include_once 'views/footer.php'; ?>
 

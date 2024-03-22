@@ -111,12 +111,12 @@ template.innerHTML = `
     </div>
     <div class="content_divisor">
         <div class="simple_container">
-            <event-title>Música por la educación</event-title>
-            <event-date>29 de Feb, 2024</event-date>
+            <event-title>...</event-title>
+            <event-date>...</event-date>
         </div>
         
         <event-description>
-        es un evento universitario que destaca el poder de la música en la enseñanza y el aprendizaje. Explora cómo la música mejora la retención de conceptos y promueve el desarrollo emocional y social de los estudiantes. Incluye talleres, paneles y presentaciones para capacitar a educadores en el uso efectivo de la música en el aula
+        -
         </event-description>
         
     </div>
@@ -134,6 +134,15 @@ class eventItem extends HTMLElement {
   connectedCallback() {
     if(this.hasAttribute('data-img')) {
       this.shadowRoot.querySelector('img').setAttribute("src", this.getAttribute('data-img'));
+    }
+    if(this.hasAttribute('data-title')) {
+        this.shadowRoot.querySelector('event-title').innerText = this.getAttribute('data-title');
+    }
+    if(this.hasAttribute('data-date')) {
+        this.shadowRoot.querySelector('event-date').innerText = this.getAttribute('data-date');
+    }
+    if(this.hasAttribute('data-description')) {
+        this.shadowRoot.querySelector('event-description').innerText = this.getAttribute('data-description');
     }
   }
 }

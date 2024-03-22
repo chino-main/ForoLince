@@ -27,9 +27,13 @@ CREATE TABLE news (
 
 CREATE TABLE events (
   id BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
-  event_title VARCHAR(255) NOT NULL,
+  event_name VARCHAR(255) NOT NULL,
   event_description TEXT NOT NULL,
-  event_date_time DATETIME NOT NULL,
-  event_location VARCHAR(255) NOT NULL,
-  event_image VARCHAR(500) NULL
+  event_date DATE NOT NULL,
+  event_time TIME NOT NULL,
+  event_address VARCHAR(255) NOT NULL,
+  event_image VARCHAR(255) NULL,
+  
+  user_id BIGINT(20) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
