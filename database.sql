@@ -33,7 +33,11 @@ CREATE TABLE events (
   event_time TIME NOT NULL,
   event_address VARCHAR(255) NOT NULL,
   event_image VARCHAR(255) NULL,
+  event_credit VARCHAR(255) NULL
   
   user_id BIGINT(20) NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+-- ignorar
+ALTER TABLE events ADD COLUMN event_credit int AFTER event_image;

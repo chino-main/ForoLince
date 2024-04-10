@@ -9,7 +9,7 @@
 
 <main>
     <?php include_once "views/landing/landing-navbar.php";?>
-    <holder id="holder-landing"> 
+    <holder id="holder-landing" style="align-items: center"> 
         <?php 
             // include_once "views/landing/landing-navbar.php";
             // include_once "views/landing/landing-toolbar.php"; 

@@ -27,6 +27,7 @@ class Events extends Connect {
   }
   
   public function getEvents(){
+    require_once '../config/utilities.php';
     $connect=parent::Conection();
     $sql = "SELECT * FROM events ;";
     $stmt = $connect->prepare($sql);
@@ -38,24 +39,23 @@ class Events extends Connect {
         $event_name = $row['event_name'];
         $event_description = $row['event_description'];
         $event_date = $row['event_date'];
+        $event_date_formated = date("d", strtotime($row["event_date"])) . ' ' . $months[date("m", strtotime($row["event_date"]))]. ' ' . date("y", strtotime($row["event_date"]));
         $event_address = $row['event_address'];
         $event_image = $row['event_image'];
         
         $response .= "
-          <event-item
+          <card-item
             data-img='$event_image'
+            data-credits='22 creditos'
             data-title='$event_name'
             data-description='$event_description'
-            data-date='$event_date'
-            onclick='toggleWindow(\"#window-events\")' 
-            data-flip-id='animate'
-          ></event-item>
+            data-date='$event_date_formated'             
+          ></card-item>
         ";
       }
       return $response;
     } catch (PDOException $e) {
-      echo "Error: " . $e->getMessage();
-      return false;
+      return "Error: " . $e->getMessage();
     }
   }
 }

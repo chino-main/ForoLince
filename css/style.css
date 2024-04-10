@@ -171,7 +171,7 @@ section{
     flex-grow: 1;
     flex-basis: 0;
     gap: 8px;
-    animation: startAnimation 1s cubic-bezier(0.1, 0.8, 0, 1);
+    /* animation: startAnimation 1s cubic-bezier(0.1, 0.8, 0, 1); */
 }
 section.active{display:flex;}
 section.sub_section{animation: startAnimation2 1s cubic-bezier(0.1, 0.8, 0, 1);}
@@ -631,7 +631,7 @@ select.toolbar-select{
 
 }
 select.toolbar-select:hover{background: var(--surfaceMedium);}
-input.error, select.error{
+input.error, select.error, textarea.error{
     color: #FF5555;
     box-shadow: 0px 0px 0px 3px rgba(255, 85, 85, 0.30), 0px 0px 0px 0.5px rgba(255, 85, 85, 0.05) !important;
 }
@@ -1288,7 +1288,7 @@ div.estimated_income  *{
 
 /* MOBILE MODIFICATIONS */
 @media only screen and (max-width: 680px){
-    /* MAIN STRUCTURE */
+    /* MAIN STRUCTURE */ol
     toolbar:not(.invisible){display:flex;}
     html{ 
         height: 100vh; 

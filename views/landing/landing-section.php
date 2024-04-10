@@ -53,7 +53,7 @@
 
 </section>
 
-<section id="section-events" style="position:relative;">
+<section id="section-events" style="position:relative; max-width:1000px;">
     <!-- <div class="title-img img-1">
         <h1 class="ultra-large">Eventos</h1>
     </div>     -->
@@ -63,6 +63,8 @@
             <h1 class="super-large emphasized-light">Eventos</h1>
         </div>        
     </div>
+
+
 
     <div class="content_box invisible pretty-content"  id="response-events_holder">
 
