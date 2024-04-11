@@ -15,8 +15,9 @@ switch ($data["op"]) {
     $event_date = filter_var($data["event_date"], FILTER_SANITIZE_STRING);
     $event_address = filter_var($data["event_address"], FILTER_SANITIZE_STRING);
     $event_image = filter_var($data["event_image"], FILTER_SANITIZE_STRING);
+    $event_credits = filter_var($data["event_credits"], FILTER_SANITIZE_STRING);
 
-    $createNewEvent = $events->createNewEvent($userid, $event_name, $event_description, $event_date, $event_address, $event_image);
+    $createNewEvent = $events->createNewEvent($userid, $event_name, $event_description, $event_date, $event_address, $event_image, $event_credits);
     if(!$createNewEvent){echo json_encode(false); exit;}
     echo json_encode(true);
     break;

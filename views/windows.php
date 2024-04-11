@@ -88,13 +88,18 @@
                     <input type="text" id="create-event_name">
                 </span>
                 <span class="modern-input">
-                    <textarea id="create-event_description" cols="30" rows="10" class="modern" placeholder="Descripción"></textarea>
+                    <textarea id="create-event_description" cols="30" rows="14" class="modern" placeholder="Descripción"></textarea>
                 </span>
             </div>
 
         </div>
         <div class="content_box small invisible">
             <div class="simple_container">
+
+            <span class="modern-input">
+                <label for="create-event_credits">Créditos a entregar</label>
+                <input type="number" id="create-event_credits" placeholder="Créditos del evento">
+            </span>
             
             <span class="modern-input">
                 <label for="create-event_date">Fecha del evento</label>

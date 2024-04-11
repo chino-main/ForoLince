@@ -9,6 +9,7 @@ async function createNewEvent(){
     const eventDate = document.getElementById("create-event_date");
     const eventAddress = document.getElementById("create-event_address");
     const eventImage = document.getElementById("create-event_image");
+    const eventCredits = document.getElementById("create-event_credits");
 
     const data = {
         op: "createNewEvent",
@@ -16,7 +17,8 @@ async function createNewEvent(){
         event_description: eventDescription.value,
         event_date: eventDate.value,
         event_address: eventAddress.value,
-        event_image: eventImage.value
+        event_image: eventImage.value,
+        event_credits: eventCredits.value,
     };
     const url = 'controllers/events.controller.php';
     const response = await fetch(url, {
@@ -33,7 +35,7 @@ async function createNewEvent(){
             return false;
         }
          
-        message("Movimiento agregado", "success");4
+        message("Evento creado", "success");4
         toggleWindow();
         return true;
     }

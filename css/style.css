@@ -1321,7 +1321,7 @@ div.estimated_income  *{
         max-width: 100%;
     }
     window.increased.slim.h-auto{ height: calc(100% + 32px); }
-    window.inreased.mini.h-auto{ height: calc(100% + 32px); }
+    window.increased.mini.h-auto{ height: calc(100% + 32px); }
     
     window.increased{
         padding-top: env(safe-area-inset-top);

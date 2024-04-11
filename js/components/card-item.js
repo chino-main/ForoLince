@@ -140,6 +140,7 @@ cardItemTemplate.innerHTML = `
     }
 
     @media only screen and (min-width: 680px){
+        card-title{margin-top:16px;}
       .card{inset:10% 5%;}
     }
     @media only screen and (max-width: 680px){
@@ -180,7 +181,7 @@ cardItemTemplate.innerHTML = `
         z-index:2;
         
     }
-    close-button svg{fill:var(--normal); filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.24));transition:transform .3s cubic-bezier(0,0,0.5,1)}
+    close-button svg{fill:var(--normal); filter: drop-shadow(0px 0px 4px rgba(var(--normalInverted), 0.24));transition:transform .3s cubic-bezier(0,0,0.5,1)}
     close-button:hover svg{transform: scale(1.1);}
     @media only screen and (min-width: 680px){
         #card-item-text-content{overflow:auto;padding:24px;}
