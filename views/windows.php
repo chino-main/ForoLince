@@ -76,6 +76,7 @@
 <window id="window-create_event" class="increased mini h-auto" data-flip-id="animate" >
     <toolbar>
         <button onclick="toggleWindow()" class="action"><span class="material-symbols-rounded">close</span></button>
+        <button onclick="toggleWindow('minimize')" class="action"><span class="material-symbols-rounded">horizontal_rule</span></button>
     </toolbar>
     <section style="gap:12px">
         

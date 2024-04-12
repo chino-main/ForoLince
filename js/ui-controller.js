@@ -69,7 +69,9 @@ function toggleWindow(windowId, position, scale){
     transparent.setAttribute("closing", "");
     transparent.addEventListener("animationend", () =>{closingAnimation()}, {once: true})
     
-    resetForm();
+    if (windowId !== "minimize") {
+      resetForm();      
+    }
     return;
   }
   if (transparent.hasAttribute("closing") && transparent.classList.contains("active")) {
