@@ -38,6 +38,7 @@ class Events extends Connect {
       $stmt->execute();
       $response = "";
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $event_id = $row["id"];
         $event_name = $row['event_name'];
         $event_description = $row['event_description'];
         $event_date = $row['event_date'];
@@ -49,6 +50,7 @@ class Events extends Connect {
         
         $response .= "
           <card-item
+            data-id='$event_id'
             data-img='$event_image'
             data-credits='$event_credits'
             data-title='$event_name'
