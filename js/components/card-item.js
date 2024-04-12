@@ -109,9 +109,12 @@ cardItemTemplate.innerHTML = `
     .simple_container{
         display:flex;
         flex-direction:column;
-        margin-bottom:8px;
         gap:0px;
     }
+    div.direction-row{
+        flex-direction:row;
+    }
+    b-margin{margin-bottom:8px;}
     .add-gap{ gap:4px; }
     .flex-row{flex-direction:row;}
 
@@ -200,11 +203,11 @@ cardItemTemplate.innerHTML = `
     button{
         display:flex;
         align-items: center;
-        font-size: 12px;
+        font-size: 16px;
         line-height: 16px;
-        padding:3px 10px;
+        padding:8px 16px;
 
-        border-radius:24px;
+        border-radius:12px;
         border:none;
         cursor:pointer;
         background:var(--primary);
@@ -228,6 +231,7 @@ cardItemTemplate.innerHTML = `
         background:var(--surfaceLightClear);
         border-radius:16px;
         margin:8px 0;
+        margin-bottom:4px;
         box-shadow: 0px 0px 0px 1px rgba(var(--normalInverted), 0.05) inset;
     }
     .content-box .divisor h1{
@@ -245,6 +249,7 @@ cardItemTemplate.innerHTML = `
         gap:4px;
     }
     dataline{
+        min-width:fit-content;
         width:fit-content;
         font-size:14px;
         font-weight:500;
@@ -274,18 +279,22 @@ cardItemTemplate.innerHTML = `
         <img src="https://th.bing.com/th/id/OIG4.XV6v0uvvkYCVu2vehKOU?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Lights" style="width:100%">
     </div>
     <div class="content_divisor" id='card-item-text-content'>
-        <div class="simple_container add-gap">
+        <div class="simple_container add-gap b-margin">
             <card-title>-</card-title>
             <div class="content-box">
                 <div class="divisor">
                     <h1>Fecha</h1>
-                    <dataline id="data-date">00/00/0000</dataline>
+                    <div class="simple_container direction-row add-gap">
+                        <dataline id="data-date">00/00/0000</dataline>
+                        <dataline id="data-time">-</dataline>
+                    </div>
                 </div>
                 <div class="divisor">
                     <h1>Creditos</h1>
                     <dataline id="data-credits" class="color-primary">0</dataline>
                 </div>
             </div>
+                <dataline id="data-address">-</dataline>
             <card-shortdescription>
             </card-shortdescription>
             
@@ -302,6 +311,12 @@ cardItemTemplate.innerHTML = `
                     <button class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"/></svg></button>
                     <button class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z"/></svg>
+                    </button>
+                </div>
+
+                <div class="simple_container">
+                    <button>
+                        Inscribirme
                     </button>
                 </div>
 
@@ -429,7 +444,12 @@ class cardItem extends HTMLElement {
     if(this.hasAttribute('data-date')) {
         this.shadowRoot.getElementById("data-date").textContent = this.getAttribute('data-date');
     }
-
+    if(this.hasAttribute('data-time')) {
+        this.shadowRoot.getElementById("data-time").textContent = this.getAttribute('data-time');
+    }
+    if(this.hasAttribute('data-address')) {
+        this.shadowRoot.getElementById("data-address").textContent = this.getAttribute('data-address');
+    }
   }
 }
 

@@ -41,6 +41,7 @@ class Events extends Connect {
         $event_description = $row['event_description'];
         $event_date = $row['event_date'];
         $event_date_formated = date("d", strtotime($row["event_date"])) . ' ' . $months[date("m", strtotime($row["event_date"]))]. ' ' . date("y", strtotime($row["event_date"]));
+        $event_time_formated = date("g:i A", strtotime($row["event_time"]));
         $event_address = $row['event_address'];
         $event_image = $row['event_image'];
         $event_credits = $row["event_credits"];
@@ -51,7 +52,9 @@ class Events extends Connect {
             data-credits='$event_credits'
             data-title='$event_name'
             data-description='$event_description'
-            data-date='$event_date_formated'             
+            data-date='$event_date_formated'    
+            data-time='$event_time_formated'
+            data-address='$event_address'         
           ></card-item>
         ";
       }
