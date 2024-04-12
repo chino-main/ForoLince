@@ -324,6 +324,13 @@ function toggleMenu(button){
   
 }
 
+function changeWindow(windowId){
+  toggleWindow();
+  setTimeout(function() {
+    toggleWindow(windowId);
+  },250);
+}
+
 
 // Ripple Effect || ripple_effect
 document.addEventListener('mousedown', (event) => {

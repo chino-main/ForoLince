@@ -397,10 +397,12 @@ button.table-button{
     align-items: center;
     background:none;
     color: rgba(var(--normalInverted), 0.85);
+    transition:background 125ms, color 125ms;
 }
 button.table-button:hover{
-    background:var(--primaryContainer); 
-    color: var(--onPrimaryContainer);
+    background:var(--primary); 
+    color: var(--onPrimary);
+    transform: scale(1.1);
 }
 button.table-button.small{
     justify-content: center;
@@ -838,6 +840,7 @@ div.content_box.invisible{
 .response_holder{
     width:100%; height:auto; display:flex; flex-wrap: wrap; overflow:auto; gap:8px;
 }
+.response_holder#response-events_table{overflow: visible;}
 div.simple_container{
     width:100%;
     display:flex;
@@ -938,6 +941,22 @@ td.options button{
     margin-left: 4px;
 }
 td.services_names{text-wrap: nowrap;}
+td img{
+    width:32px; 
+    border-radius:4px;
+    transform-origin: top left;
+    transition:transform 500ms cubic-bezier(.6,-0.14,0,1), border-radius 500ms cubic-bezier(.6,-0.14,0,1);
+    cursor:pointer;
+}
+td img:hover{
+    filter: brightness(0.9);
+}
+td img:active{
+    transform: scale(15);
+    border-radius: 2px;
+    z-index: 3;
+    transition:transform 500ms cubic-bezier(.6,-0.14,0,1.16), border-radius 500ms cubic-bezier(.6,-0.14,0,1.16);
+}
 
 /* TABLE PAGINATOR */
 psholder{

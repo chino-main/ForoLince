@@ -13,11 +13,12 @@ switch ($data["op"]) {
     $event_name = filter_var($data["event_name"], FILTER_SANITIZE_STRING);
     $event_description = filter_var($data["event_description"], FILTER_SANITIZE_STRING);
     $event_date = filter_var($data["event_date"], FILTER_SANITIZE_STRING);
+    $event_time = filter_var($data["event_time"], FILTER_SANITIZE_STRING);
     $event_address = filter_var($data["event_address"], FILTER_SANITIZE_STRING);
     $event_image = filter_var($data["event_image"], FILTER_SANITIZE_STRING);
     $event_credits = filter_var($data["event_credits"], FILTER_SANITIZE_STRING);
 
-    $createNewEvent = $events->createNewEvent($userid, $event_name, $event_description, $event_date, $event_address, $event_image, $event_credits);
+    $createNewEvent = $events->createNewEvent($userid, $event_name, $event_description, $event_date, $event_time, $event_address, $event_image, $event_credits);
     if(!$createNewEvent){echo json_encode(false); exit;}
     echo json_encode(true);
     break;
@@ -25,5 +26,10 @@ switch ($data["op"]) {
     $getEvents = $events->getEvents();
     if(!$getEvents){echo json_encode(false); exit;}
     echo json_encode($getEvents);
+    break;
+  case "getEventsTable":
+    $getEventsTable = $events->getEventsTable();
+    if(!$getEventsTable){echo json_encode(false); exit;}
+    echo json_encode($getEventsTable);
     break;
 }

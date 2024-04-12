@@ -19,7 +19,7 @@
 </main>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        getEvents();
+        getEventsCards();
     });
 </script>
 

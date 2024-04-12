@@ -203,16 +203,23 @@ cardItemTemplate.innerHTML = `
     button{
         display:flex;
         align-items: center;
-        font-size: 16px;
+        justify-content:center;
+        font-size: 18px;
+        font-weight: 500;
         line-height: 16px;
-        padding:8px 16px;
-
-        border-radius:12px;
+        padding:16px 24px;
+        width:100%;
+        
+        border-radius:18px;
         border:none;
         cursor:pointer;
-        background:var(--primary);
-        color:var(--normal);
+        background:var(--primaryContainer);
+        color:var(--onPrimaryContainer);
         transition:all 125ms;
+    }
+    button:hover{
+        background:var(--primary);
+        color:var(--onPrimary);
     }
 
     button.icon{
@@ -264,6 +271,12 @@ cardItemTemplate.innerHTML = `
 
     }
 
+    span.interaction{
+        position:absolute;
+        width:100%;
+        height:100%;
+        
+    }
 </style>
 
 <div class="transparent-cards" style="display:none; z-index:10; width:100%; height:100vh; inset:0; position:fixed; background:rgba(var(--normalInverted), 0.1)">
@@ -275,6 +288,8 @@ cardItemTemplate.innerHTML = `
     <div class="content_divisor" id="img-holder">
         <close-button>
             <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m480-432 118 117q9 10 23 10.5t25-11.007q11-10.508 11-23.747T646-364L528-480l118-118q9-9 10-23t-10-25q-11.411-11-24.5-11T598-646L480-528 363-646q-10-9-23.5-10T316-646q-12 11.411-12 24.5t12 23.5l116 118-117 117q-10 10-10.5 23.5t11.007 23.5q10.508 12 23.747 12T364-316l116-116Zm.138 373Q393-59 316-91.5t-134.5-90Q124-239 91.5-315.862t-32.5-164Q59-567 91.5-644t89.843-134.553q57.343-57.552 134.278-90.5Q392.557-902 479.779-902q87.221 0 164.339 32.87 77.119 32.87 134.596 90.29 57.478 57.42 90.382 134.46T902-480q0 87.276-32.947 164.26-32.948 76.983-90.5 134.362Q721-124 644.138-91.5t-164 32.5Z"/></svg>
+            
+
         </close-button>
         <img src="https://th.bing.com/th/id/OIG4.XV6v0uvvkYCVu2vehKOU?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Lights" style="width:100%">
     </div>
@@ -307,17 +322,10 @@ cardItemTemplate.innerHTML = `
                     ...
                 </card-description>
 
-                <div class="simple_container flex-row add-gap">
-                    <button class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"/></svg></button>
-                    <button class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z"/></svg>
-                    </button>
-                </div>
+               
 
-                <div class="simple_container">
-                    <button>
-                        Inscribirme
-                    </button>
+                <div id="response-holder-sub-button" class="simple_container" style="width:100%; align-items:flex-start; margin:16px 0;">
+                    
                 </div>
 
                 
@@ -361,6 +369,18 @@ class cardItem extends HTMLElement {
             element.removeAttribute("closing");
         }
     }
+    
+    // Create sub button
+    const subButton = document.createElement('button');
+    subButton.textContent = 'Inscribirse';
+    subButton.onclick = function() {toggleCard(); changeWindow('#window-inscription')};
+    var buttonHolder = this.shadowRoot.getElementById("response-holder-sub-button");
+    buttonHolder.appendChild(subButton);
+
+    const interactionClose = document.createElement('span');
+    interactionClose.classList.add("interaction");
+    closeButton.appendChild(interactionClose);
+    interactionClose.onclick = function() {toggleCard()};
 
 
     function toggleCard(){
@@ -387,11 +407,12 @@ class cardItem extends HTMLElement {
             transparentCards.style.display = "none";
             cardElement.addEventListener('mouseup', () => { toggleCard(); }, {once: true});
 
-            // closing animations
+            // closing animation
             closeButton.setAttribute("closing", "");
-            closeButton.addEventListener("animationend", () =>{ removeVisibility(closeButton) }, {once: true})
+            closeButton.addEventListener("animationend", () =>{ removeVisibility(closeButton);}, {once: true})
             hiddenContent.setAttribute("closing", "");
             hiddenContent.addEventListener("animationend", () =>{ removeVisibility(hiddenContent); }, {once: true})
+            
             
 
         }else{
@@ -399,7 +420,7 @@ class cardItem extends HTMLElement {
             transparentCards.style.display = "flex";
             cardElement.classList.add("open");
             transparentCards.appendChild(cardElement);
-            closeButton.addEventListener('click', () => { toggleCard(); }, {once: true});
+            // closeButton.addEventListener('click', () => { toggleCard(); }, {once: true});
 
             // closing animations
             // if (cardElement.classList.contains("open")) {
